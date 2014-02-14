@@ -1,0 +1,45 @@
+/* Prestaconcept.github.com styles
+------------------------------------------------------------ */
+
+@import "base-bootstrap.less";
+@import "../font-awesome/less/font-awesome.less";
+@import "layout.less";
+@import "bundles.less";
+@import "sidenav.less";
+@import "code.less";
+@import "showcase.less";
+@import "extension.less";
+
+/* Custom variables
+------------------------------------------------------------ */
+@lightPurple: #bb7289;
+@lighterPurple: #bdb6ba;
+
+.scale-rotate(@ratio, @degrees) {
+    -webkit-transform: scale(@ratio) rotate(@degrees);
+    -moz-transform: scale(@ratio) rotate(@degrees);
+    -ms-transform: scale(@ratio) rotate(@degrees);
+    -o-transform: scale(@ratio) rotate(@degrees);
+    transform: scale(@ratio) rotate(@degrees);
+}
+
+/* Utils
+------------------------------------------------------------ */
+a:hover {
+    cursor: pointer;
+}
+.center {
+    text-align: center;
+}
+
+.btn {
+    font-family: @headingsFontFamily;
+    font-size: 35px;
+    padding: 15px 50px;
+
+    &.btn-small {
+        padding: 2px 10px;
+        font-size: 11.9px;
+        font-family: @sansFontFamily;
+    }
+}

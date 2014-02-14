@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PrestaCMS Block System</title>
+
+    <meta name="author" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="../../presta-cms-core/developer-guide/block.html" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="../../assets/theme/css/main.css?version=20130731" rel="stylesheet" type="text/css" media="all">
+    <link href="../../assets/theme/css/base_syntax.css?version=20130731" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico">
+
+    <!-- atom & rss feed -->
+    <!--<link href="" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">-->
+    <!--<link href="" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">-->
+
+    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie|Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300' rel='stylesheet' type='text/css'>
+</head>
+
+    <body>
+        <header class="navbar navbar-default navbar-presta-top navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand brand" href="../../index.html" title="Symfony2 Expert">Prestaconcept</a>
+                    <a class="ribbon" href="https://github.com/prestaconcept"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on Github"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Dropdown -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Bundles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+
+
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaSitemapBundle/blob/master/README.md">PrestaSitemapBundle</a></li>
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaComposerPublicBundle/blob/master/README.md">PrestaComposerPublicBundle</a></li>
+
+
+
+
+                                        <li class="divider"></li>
+
+
+                                        <li><a href="../../presta-cms-core/index.html">PrestaCMSCoreBundle</a></li>
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaCMSCKEditorBundle/blob/master/README.md">PrestaCMSCKEditorBundle</a></li>
+
+                                        <li><a href="../../presta-cms-contact/index.html">PrestaCMSContactBundle</a></li>
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaCMSFAQBundle/blob/master/README.md">PrestaCMSFAQBundle</a></li>
+
+                                        <li><a href="../../presta-cms-media/index.html">PrestaCMSMediaBundle</a></li>
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaCMSSitemapBridgeBundle/blob/master/README.md">PrestaCMSSitemapBridgeBundle</a></li>
+
+                                        <li><a href="../../presta-cms-social/index.html">PrestaCMSSocialBundle</a></li>
+
+                                        <li><a href="../../presta-cms-theme/index.html">PrestaCMSThemeBasicBundle</a></li>
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaCMSUserBundle/blob/master/README.md">PrestaCMSUserBundle</a></li>
+
+
+
+
+                                        <li class="divider"></li>
+
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaSonataAdminExtendedBundle/blob/master/README.md">PrestaSonataAdminExtendedBundle</a></li>
+
+                                        <li><a href="https://github.com/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle/blob/master/README.md">PrestaSonataGedmoDoctrineExtensionsBundle</a></li>
+
+                                        <li><a href="../../presta-sonata-navigation/index.html">PrestaSonataNavigationBundle</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class=""><a href="http://www.prestaconcept.net">Contact US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div id="hook-outer">
+    <div id="subheader" class="container">
+        <h1>PrestaCMS Block System <small>- Easily customize your site</small></h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar hidden-print" role="complementary">
+
+                <ul class="nav">
+
+
+                        <li >
+
+                                <a href="../../presta-cms-core/index.html#content" ><i class="icon-chevron-right"></i> Overview</a>
+
+                            <ul class="nav">
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/index.html#content" >Overview</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/features.html#content" >Features</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/our-philosophy.html#content" >Our philosophy</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/technologies.html#content" >Technologies</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/help-support.html#content" >Help & Support</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/release-process.html#content" >Release Process</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/extensions.html#content" >Extensions</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/showcases.html#content" >Showcases</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/statistics.html#content" >Statistics</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/contributing.html#content" >Contributing</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/faq.html#content" >FAQ</a>
+
+                                    </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="active">
+
+                                <a href="../../presta-cms-core/developer-guide/index.html#content" ><i class="icon-chevron-right"></i> Developer guide</a>
+
+                            <ul class="nav">
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/installation.html#content" >Installation</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/getting-started.html#content" >Getting started</a>
+
+                                    </li>
+
+                                    <li class="active">
+
+                                        <a href="../../presta-cms-core/developer-guide/block.html#content" >Block System</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/models.html#content" >Working with models</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/fixtures.html#content" >Fixtures</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/page.html#content" >Page types</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/custom-controller.html#content" >Custom controller</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/extending.html#content" >Extending PrestaCMS</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/developer-guide/docs.html#content" >Useful documentation</a>
+
+                                    </li>
+
+                            </ul>
+                        </li>
+
+                        <li >
+
+                                <a href="../../presta-cms-core/user-guide/index.html#content" ><i class="icon-chevron-right"></i> User guide</a>
+
+                            <ul class="nav">
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/user-guide/getting-started.html#content" >Getting started</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/user-guide/website.html#content" >Website</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/user-guide/theme.html#content" >Theme</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/user-guide/page.html#content" >Page</a>
+
+                                    </li>
+
+                                    <li class="active">
+
+                                        <a href="../../presta-cms-core/user-guide/block.html#content" >Block</a>
+
+                                    </li>
+
+                            </ul>
+                        </li>
+
+                        <li >
+
+                                <a href="../../presta-cms-core/theming-guide/index.html#content" ><i class="icon-chevron-right"></i> Theming guide</a>
+
+                            <ul class="nav">
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/theming-guide/getting-started.html#content" >Getting started</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/theming-guide/structure.html#content" >Theme structure</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/theming-guide/admin.html#content" >Administration features</a>
+
+                                    </li>
+
+                                    <li >
+
+                                        <a href="../../presta-cms-core/theming-guide/showcase.html#content" >Showcase</a>
+
+                                    </li>
+
+                            </ul>
+                        </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <div class="section"><h2 id='overview'>Overview</h2>
+
+<p>PrestaCms content is managed through blocks. Every pages and theme are divided in zones which contains blocks of different types.</p>
+
+<p>Block system is based on <a href='http://symfony.com/doc/master/cmf/bundles/block/index.html'>CMFBlockBundle</a> which extends <a href='http://sonata-project.org/bundles/block/master/doc/index.html'>SonataBlockBundle</a>.</p>
+
+<p>Before going further, we suggest you read the <a href='http://sonata-project.org/bundles/block/master/doc/index.html'>SonataBlockBundle</a> documentation which explain a lot of useful things.</p>
+
+<h2 id='configuration'>Configuration</h2>
+
+<p>By default, you can add every type of block you want in a page without any specific configuration.</p>
+
+<h3 id='exclude_a_block_from_choice_list'>Exclude a block from choice list</h3>
+
+<p>However, for some reason, if you want to restrict the choice of adding blocks in your page, this is possible like follows:</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>presta_cms_core</span><span class='p-Indicator'>:</span>
+    <span class='l-Scalar-Plain'>...</span>
+    <span class='l-Scalar-Plain'>blocks</span><span class='p-Indicator'>:</span>
+        <span class='l-Scalar-Plain'>global</span><span class='p-Indicator'>:</span>
+            <span class='l-Scalar-Plain'>excluded</span><span class='p-Indicator'>:</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.ajax</span>
+</code></pre></div>
+<h3 id='force_some_blocks_to_display_in_choice_list'>Force some blocks to display in choice list</h3>
+
+<p>Maybe, on the contrary, if you want to force the display of <strong>only</strong> one (or several) block to add in the page, you can do it in this way:</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>presta_cms_core</span><span class='p-Indicator'>:</span>
+    <span class='l-Scalar-Plain'>...</span>
+    <span class='l-Scalar-Plain'>blocks</span><span class='p-Indicator'>:</span>
+        <span class='l-Scalar-Plain'>global</span><span class='p-Indicator'>:</span>
+            <span class='l-Scalar-Plain'>accepted</span><span class='p-Indicator'>:</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.ajax</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.sitemap</span>
+</code></pre></div>
+<h3 id='add_configuration_for_specific_zone_or_container'>Add configuration for specific zone or container</h3>
+
+<p>Also, you can configuration a behavior for a specific zone for example.</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>presta_cms_core</span><span class='p-Indicator'>:</span>
+    <span class='l-Scalar-Plain'>...</span>
+    <span class='l-Scalar-Plain'>blocks</span><span class='p-Indicator'>:</span>
+        <span class='l-Scalar-Plain'>global</span><span class='p-Indicator'>:</span>
+            <span class='l-Scalar-Plain'>accepted</span><span class='p-Indicator'>:</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.ajax</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.sitemap</span>
+        <span class='l-Scalar-Plain'>content</span><span class='p-Indicator'>:</span>
+            <span class='l-Scalar-Plain'>excluded</span><span class='p-Indicator'>:</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.simple</span>
+</code></pre></div>
+<p>Here, we excluded the simple block from blocks choice list just for the zone named &#8220;content&#8221;. All others zones will use the &#8220;global&#8221; configuration. If no &#8220;global&#8221; configuration is found, no restriction will be applied on the blocks.</p>
+
+<p>The same thing is possible with the container block, if you use their type.</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>presta_cms_core</span><span class='p-Indicator'>:</span>
+    <span class='l-Scalar-Plain'>...</span>
+    <span class='l-Scalar-Plain'>blocks</span><span class='p-Indicator'>:</span>
+        <span class='l-Scalar-Plain'>global</span><span class='p-Indicator'>:</span>
+            <span class='l-Scalar-Plain'>accepted</span><span class='p-Indicator'>:</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.ajax</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.sitemap</span>
+        <span class='l-Scalar-Plain'>presta_cms.block.container</span><span class='p-Indicator'>:</span>
+            <span class='l-Scalar-Plain'>excluded</span><span class='p-Indicator'>:</span>
+                <span class='p-Indicator'>-</span> <span class='l-Scalar-Plain'>presta_cms.block.simple</span>
+</code></pre></div>
+<h2 id='block_types'>Block types</h2>
+
+<p>PrestaCMSCore handle basic block types :</p>
+
+<ul>
+<li>Simple : A simple block contains a title, a text and a link to another CMS page.</li>
+</ul>
+<div class='screenshot'>
+<p><img alt='Simple block' src='/assets/presta-cms-core/blocks/block-simple.jpg' /></p>
+</div>
+<ul>
+<li>Sitemap : Sitemap block render a navigation under a defined root page. It can be used for a footer or sidebar navigation.</li>
+</ul>
+<div class='screenshot'>
+<p><img alt='Sitemap block' src='/assets/presta-cms-core/blocks/block-sitemap.jpg' /></p>
+</div>
+<ul>
+<li>Container : A container allow you to format page rendering. Multiple format are available : 50/50, 1/3 - 2/3, &#8230; Containers can contain any kind of other blocks.</li>
+</ul>
+<div class='screenshot'>
+<p><img alt='Container block' src='/assets/presta-cms-core/blocks/block-container.jpg' /></p>
+</div>
+<ul>
+<li>Page children : this block display a list of page children with a title and a description. It is usually used for landing pages.</li>
+</ul>
+<div class='screenshot'>
+<p><img alt='Page children block' src='/assets/presta-cms-core/blocks/block-page-children.jpg' /></p>
+</div>
+<ul>
+<li>Ajax: Display some ajax content. This allows to cache a full page and only refresh the block with ajax. You have to include the <em>Resources/public/js/prestacmscore.js</em> file in your theme layout to use it. An example is available here : <a href='http://sandbox.prestacms.com/demo/left-sidebar'>sandbox - Left sidebar layout</a>.</li>
+</ul>
+
+<p>Other bundle can easily add more block types to your application, for example you can have a look at <a href='/presta-cms-media'>PrestaCMSMediaBundle</a> which adds special blocks to render medias.</p>
+
+<h2 id='block_base_service'> Block base service</h2>
+
+<p>If you have read the <a href='http://sonata-project.org/bundles/block/master/doc/index.html'>SonataBlockBundle</a> documentation you know that the two main elements of a block are template and service class (responsible of rendering the block).</p>
+
+<p>Common block features have been centralized in <a href='https://github.com/prestaconcept/PrestaCMSCoreBundle/blob/master/Block/BaseBlockService.php'>BaseBlockService</a> so every new block service should extend it.</p>
+
+<p><a href='https://github.com/prestaconcept/PrestaCMSCoreBundle/blob/master/Block/BaseBlockService.php'>BaseBlockService</a> commons features are :</p>
+
+<ul>
+<li>provide the <strong>translator</strong></li>
+
+<li>automatically load the <strong>template</strong></li>
+
+<li><strong>preview</strong> : block which used javascript or complex css features to render should provide a preview image to display it in the administration screen (for example carousel).</li>
+
+<li><strong>settingsRoute</strong> : block which displays application entities (for example blog posts) should provide a settingsRoute which is the sonata admin code of the entities listing. A link to the corresponding admin list will be displayed in the page administration.</li>
+</ul>
+
+<h2 id='build_your_first_block'>Build your first block</h2>
+
+<p>Let&#8217;s create a new block for listing blog post. Blog post have a custom administration done with sonata.</p>
+
+<p>Our bundle will have an editable title and an option to set the number of post to display.</p>
+
+<p>We supposed that your bundle is in src/Presta/Blog and Blog Post CRUD is already done.</p>
+
+<h3 id='the_service'>The service</h3>
+
+<p>Create a service class which extends the base one.</p>
+
+<p>As our block is linked to Blog Post, we will set the settingRoute to link it, we will also add a preview.</p>
+
+<p>As we need to make query to Post repository, we will use <em>getAdditionalViewParameters</em> method to give additional parameters to the view.</p>
+
+<p>We need to configure the edit form to add an entry for the number of posts to display and as we need a default number we will set it in the <em>getDefaultSettings()</em></p>
+
+<p>So here is how the code looks like :</p>
+
+<p>File : <em>src/Presta/Blog/Block/Post/ListBlockService.php</em></p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='k'>namespace</span> <span class='nx'>Presta\Blog\Block\Post</span><span class='p'>;</span>
+
+<span class='k'>use</span> <span class='nx'>Sonata\BlockBundle\Model\BlockInterface</span><span class='p'>;</span>
+<span class='k'>use</span> <span class='nx'>Presta\CMSCoreBundle\Block\BaseBlockService</span><span class='p'>;</span>
+<span class='k'>use</span> <span class='nx'>Doctrine\ORM\EntityRepository</span><span class='p'>;</span>
+
+<span class='sd'>/**</span>
+<span class='sd'> * @author Nicolas Bastien &lt;nbastien@prestaconcept.net&gt;</span>
+<span class='sd'> */</span>
+<span class='k'>class</span> <span class='nc'>ListBlockService</span> <span class='k'>extends</span> <span class='nx'>BaseBlockService</span>
+<span class='p'>{</span>
+    <span class='sd'>/**</span>
+<span class='sd'>     * @var string</span>
+<span class='sd'>     */</span>
+    <span class='k'>protected</span> <span class='nv'>$preview</span> <span class='o'>=</span> <span class='s1'>&#39;bundles/prestablog/theme/sandbox/admin/img/block/blog_post_list.jpg&#39;</span><span class='p'>;</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * @var string</span>
+<span class='sd'>     */</span>
+    <span class='k'>protected</span> <span class='nv'>$settingsRoute</span> <span class='o'>=</span> <span class='s1'>&#39;admin_presta_blog_post_list&#39;</span><span class='p'>;</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * @var string</span>
+<span class='sd'>     */</span>
+    <span class='k'>protected</span> <span class='nv'>$template</span> <span class='o'>=</span> <span class='s1'>&#39;PrestaBlogBundle:Block\Blog\Post:block_list.html.twig&#39;</span><span class='p'>;</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * @var EntityRepository</span>
+<span class='sd'>     */</span>
+    <span class='k'>protected</span> <span class='nv'>$repository</span><span class='p'>;</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * @param $container</span>
+<span class='sd'>     */</span>
+    <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>setContainer</span><span class='p'>(</span><span class='nv'>$container</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>repository</span> <span class='o'>=</span> <span class='nv'>$container</span><span class='o'>-&gt;</span><span class='na'>get</span><span class='p'>(</span><span class='s1'>&#39;doctrine&#39;</span><span class='p'>)</span><span class='o'>-&gt;</span><span class='na'>getRepository</span><span class='p'>(</span><span class='s1'>&#39;PrestaBlogBundle:Blog\Post&#39;</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * {@inheritdoc}</span>
+<span class='sd'>     */</span>
+    <span class='k'>protected</span> <span class='k'>function</span> <span class='nf'>getAdditionalViewParameters</span><span class='p'>(</span><span class='nx'>BlockInterface</span> <span class='nv'>$block</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='nv'>$settings</span> <span class='o'>=</span> <span class='nb'>array_merge</span><span class='p'>(</span>
+            <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>getDefaultSettings</span><span class='p'>(),</span>
+            <span class='nv'>$block</span><span class='o'>-&gt;</span><span class='na'>getSettings</span><span class='p'>()</span>
+        <span class='p'>);</span>
+
+        <span class='nv'>$settings</span><span class='p'>[</span><span class='s1'>&#39;posts&#39;</span><span class='p'>]</span> <span class='o'>=</span> <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>repository</span><span class='o'>-&gt;</span><span class='na'>getActiveList</span><span class='p'>(</span><span class='nv'>$settings</span><span class='p'>[</span><span class='s1'>&#39;nb_posts&#39;</span><span class='p'>]);</span>
+
+        <span class='k'>return</span> <span class='nv'>$settings</span><span class='p'>;</span>
+    <span class='p'>}</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * {@inheritdoc}</span>
+<span class='sd'>     */</span>
+    <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>getFormSettings</span><span class='p'>(</span><span class='nx'>FormMapper</span> <span class='nv'>$formMapper</span><span class='p'>,</span> <span class='nx'>BlockInterface</span> <span class='nv'>$block</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='k'>array</span><span class='p'>(</span>
+            <span class='k'>array</span><span class='p'>(</span><span class='s1'>&#39;nb_posts&#39;</span><span class='p'>,</span> <span class='s1'>&#39;integer&#39;</span><span class='p'>,</span> <span class='k'>array</span><span class='p'>(</span><span class='s1'>&#39;required&#39;</span> <span class='o'>=&gt;</span> <span class='k'>false</span><span class='p'>,</span> <span class='s1'>&#39;label&#39;</span> <span class='o'>=&gt;</span> <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>trans</span><span class='p'>(</span><span class='s1'>&#39;form.label_nb_posts&#39;</span><span class='p'>)))</span>
+        <span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * {@inheritdoc}</span>
+<span class='sd'>     */</span>
+    <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>getDefaultSettings</span><span class='p'>()</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='k'>array</span><span class='p'>(</span>
+            <span class='s1'>&#39;nb_posts&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>0</span>
+        <span class='p'>);</span>
+    <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
+<h3 id='the_template'>The template</h3>
+
+<p>Second part is to build the corresponding template.</p>
+
+<p>As we set the $template variable in the block service, we have to add <em>PrestaBlogBundle:Block\Blog\Post:block_list.html.twig</em> file.</p>
+
+<p>Every template should extends the default one which adds default structure and ids.</p>
+<div class='highlight'><pre><code class='html'>{% extends &#39;PrestaCMSCoreBundle:Block:base_block.html.twig&#39; %}
+
+{% block block %}
+    <span class='nt'>&lt;h2&gt;</span>{{ settings.title }}<span class='nt'>&lt;/h2&gt;</span>
+    <span class='nt'>&lt;ul</span> <span class='na'>id=</span><span class='s'>&quot;post-list&quot;</span><span class='nt'>&gt;</span>
+        {% for post in posts %}
+            <span class='nt'>&lt;li&gt;</span>
+                <span class='nt'>&lt;h3&gt;</span>{{ post.tile }}<span class='nt'>&lt;/h3&gt;</span>
+                <span class='nt'>&lt;p&gt;</span>{{ post.description }}<span class='nt'>&lt;/p&gt;</span>
+            <span class='nt'>&lt;/li&gt;</span>
+        {% endfor %}
+    <span class='nt'>&lt;/ul&gt;</span>
+{% endblock %}
+</code></pre></div>
+<h3 id='configuration'>Configuration</h3>
+
+<p>Now our block is nearly over, we just need to register the new service and to add a special tag for PrestaCMS.</p>
+
+<p>File : /src/Presta/BlogBundle/Resources/config/block.yml</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>services</span><span class='p-Indicator'>:</span>
+    <span class='l-Scalar-Plain'>...</span>
+    <span class='l-Scalar-Plain'>#Blocks</span>
+    <span class='l-Scalar-Plain'>presta_blog.block.post.list</span><span class='p-Indicator'>:</span>
+        <span class='l-Scalar-Plain'>class</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Presta\BlogBundle\Block\Post\ListBlockService</span>
+        <span class='l-Scalar-Plain'>parent</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>presta_cms.block.base</span>
+        <span class='l-Scalar-Plain'>tags</span><span class='p-Indicator'>:</span>
+            <span class='p-Indicator'>-</span> <span class='p-Indicator'>{</span><span class='nv'>name</span><span class='p-Indicator'>:</span> <span class='nv'>sonata.block</span><span class='p-Indicator'>}</span>
+            <span class='p-Indicator'>-</span> <span class='p-Indicator'>{</span><span class='nv'>name</span><span class='p-Indicator'>:</span> <span class='nv'>presta_cms.block</span><span class='p-Indicator'>}</span>
+        <span class='l-Scalar-Plain'>calls</span><span class='p-Indicator'>:</span>
+            <span class='p-Indicator'>-</span> <span class='p-Indicator'>[</span> <span class='nv'>setContainer</span><span class='p-Indicator'>,</span> <span class='p-Indicator'>[</span><span class='err'>@</span><span class='nv'>service_container</span><span class='p-Indicator'>]]</span>
+</code></pre></div>
+<p>Tag <em>presta_cms.block</em> allow BlockManager to retrieve it and to use it in the available block list.</p>
+
+<p>You can also do this using XML language.</p>
+
+<p>File : /src/Presta/BlogBundle/Resources/config/block.xml</p>
+<div class='highlight'><pre><code class='xml'><span class='nt'>&lt;container</span> <span class='na'>xmlns=</span><span class='s'>&quot;http://symfony.com/schema/dic/services&quot;</span>
+       <span class='na'>xmlns:xsi=</span><span class='s'>&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+       <span class='na'>xsi:schemaLocation=</span><span class='s'>&quot;http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd&quot;</span><span class='nt'>&gt;</span>
+
+    <span class='nt'>&lt;parameters&gt;</span>
+        <span class='nt'>&lt;parameter</span> <span class='na'>key=</span><span class='s'>&quot;presta_cms.block.list.class&quot;</span><span class='nt'>&gt;</span>Presta\CMSMediaBundle\Block\ListBlockService<span class='nt'>&lt;/parameter&gt;</span>
+    <span class='nt'>&lt;/parameters&gt;</span>
+
+    <span class='nt'>&lt;services&gt;</span>
+        <span class='nt'>&lt;service</span> <span class='na'>id=</span><span class='s'>&quot;presta_cms.block.list&quot;</span> <span class='na'>class=</span><span class='s'>&quot;%presta_cms.block.list.class%&quot;</span> <span class='na'>parent=</span><span class='s'>&quot;presta_cms.block.base&quot;</span><span class='nt'>&gt;</span>
+            <span class='nt'>&lt;tag</span> <span class='na'>name=</span><span class='s'>&quot;sonata.block&quot;</span><span class='nt'>/&gt;</span>
+            <span class='nt'>&lt;tag</span> <span class='na'>name=</span><span class='s'>&quot;presta_cms.block&quot;</span><span class='nt'>/&gt;</span>
+        <span class='nt'>&lt;/service&gt;</span>
+    <span class='nt'>&lt;/services&gt;</span>
+<span class='nt'>&lt;/container&gt;</span>
+</code></pre></div>
+<p>And some translation for the admin interface : <em>PrestaCMSCoreBundle.en.yml</em></p>
+<div class='highlight'><pre><code class='yaml'>    <span class='l-Scalar-Plain'>block.title.presta_blog.block.post.list</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>Latest posts</span>
+    <span class='l-Scalar-Plain'>block.description.presta_blog.block.post.list</span><span class='p-Indicator'>:</span> <span class='l-Scalar-Plain'>This blocks displays lasted blog posts</span>
+</code></pre></div><hr />
+<p>&#8594; Let&#8217;s continue with <a href='/presta-cms-core/developer-guide/models.html#content'>block advanced features</a>.</p>
+</div>
+        </div>
+    </div>
+</div>
+
+
+        <footer>
+            <div class="hire-us">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2>Need Symfony2 developers for your next project</h2>
+                            <a href="http://www.prestaconcept.net" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-hand-right"></i>&nbsp;Hire Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="outer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2>PrestaConcept a Symfony2 developers company</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="footer-map" src="../../assets/theme/img/layout/footer-map.jpg" class="img-responsive img-rounded" />
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="contact-elements">
+                                <a href="http://www.prestaconcept.net" class="brand">Prestaconcept</a>
+                                <ul>
+                                    <li><i class="glyphicon glyphicon-earphone"></i> +33 (0)4 78 54 45 45</li>
+                                    <li><i class="glyphicon glyphicon-home"></i><a href="http://www.prestaconcept.net">www.prestaconcept.net</a></li>
+                                    <li>
+                                        <i class="glyphicon glyphicon-envelope"></i>5 impasse morel 69003 Lyon - FRANCE
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Copyright &copy; Prestaconcept
+                            &nbsp; <img src="https://d2weczhvl823v0.cloudfront.net/prestaconcept/prestaconcept.github.io/trend.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../../assets/theme/js/bootstrap.min.js"></script>
+        <!-- Project file -->
+        <script src="../../assets/theme/js/main.js"></script>
+
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-620827-11', 'prestaconcept.github.io');
+            ga('send', 'pageview');
+        </script>
+
+    </body>
+</html>

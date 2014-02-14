@@ -1,0 +1,196 @@
+
+body {
+    background: url('/assets/img/layout/body-bg.png') repeat top left transparent;
+}
+
+/* Header
+------------------------------------------------------------ */
+header {
+    padding: 15px 0px;
+    background: url('/assets/img/layout/header-bg.png') repeat top left transparent;
+
+    #title {
+        height: 56px;
+        overflow: hidden;
+        padding-left: 358px;
+        width: 0;
+        background: url('/assets/img/layout/prestaconcept-logo.png') no-repeat;
+        float: left;
+    }
+
+    /* Navigation
+    ------------------------------------------------------------ */
+    nav {
+        float: right;
+        margin-bottom: 5px;
+        ul {
+            margin: 0px;
+        }
+        li {
+            float: left;
+            list-style-type: none;
+            padding: 17px 0px;
+            a {
+                color: @purple;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: "Arial Narrow", 'Open Sans', Arial, sans-serif;
+                font-weight: 400;
+                letter-spacing: 0.38em;
+                font-size: 13px;
+                padding: 14px;
+            }
+            a:hover {
+                color: @green;
+                text-decoration: none;
+                //                text-shadow: 0px 1px 5px #000000;
+            }
+        }
+        li:last-child a {
+            margin-right: 0;
+        }
+    }
+}
+/* Hook
+------------------------------------------------------------ */
+#hook-outer {
+    background: @lightPurple;
+
+    #hook {
+        height: 450px;
+        background: url('/assets/img/layout/prestaconcept-header.png') no-repeat bottom left transparent;
+
+        h1 {
+            margin-top: 50px;
+            text-align: right;
+        }
+    }
+    h1 {
+        color: #fff;
+        text-shadow: 0px 1px 5px #000000;
+        margin-top: 20px;
+        margin-right: 35px;
+        font-size: 50px;
+        font-weight: normal;
+    }
+
+    p {
+        font-family: @headingsFontFamily;
+        color: #fff;
+        text-shadow: 0px 1px 5px #000000;
+        font-style: italic;
+        margin-left: 75px;
+        font-size: 30px;
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+    }
+}
+
+/* Footer
+------------------------------------------------------------ */
+#footer-container-outer {
+    #footer-top-container {
+        background: @purple;
+
+        h2 {
+            color: #fff;
+            text-shadow: 0px 1px 5px #000000;
+            font-size: 50px;
+            text-align: center;
+            font-weight: normal;
+        }
+    }
+    #footer-container {
+        background: url("/assets/img/layout/header-shadow.png") no-repeat scroll top center transparent;
+        padding-top: 35px;
+        color: @purple;
+
+        #map-container {
+
+            padding: 15px;
+            text-align: center;
+
+            img {
+                border: 5px solid @lighterPurple;
+                .border-radius(4px);
+            }
+        }
+
+        #footer-contact {
+            margin-top: 100px;
+
+            .logo {
+                height: 62px;
+                overflow: hidden;
+                padding-left: 360px;
+                width: 0;
+                background: url('/assets/img/layout/prestaconcept-logo.png') no-repeat 100% 0px;
+                border-bottom: 1px solid @lighterPurple;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            ul {
+                margin-left: 75px;
+            }
+        }
+    }
+}
+#footer-copyright-outer {
+    #footer-copyright {
+        border-top: 1px solid @lighterPurple;
+        color: @lightPurple;
+        font-style: italic;
+        margin: 15px 0px;
+        padding-top: 15px;
+        padding-right: 25px;
+        text-align: right;
+    }
+}
+
+/* Hire-us
+------------------------------------------------------------ */
+#hire-us-outer {
+    #gradient > .vertical(#7a7903, #999900);
+    padding: 25px 0px;
+    text-align: center;
+
+    h2 {
+        color: #fff;
+        text-shadow: 0px 1px 5px #000000;
+        text-align: center;
+        font-weight: normal;
+        font-size: 40px;
+    }
+}
+
+/* Fork us on github
+------------------------------------------------------------ */
+
+
+/* Content
+------------------------------------------------------------ */
+div.content-outer {
+    background: url("/assets/img/layout/header-shadow.png") no-repeat scroll top center #fff;
+    padding: 50px 0px;
+
+    .content {
+
+        .doc-content {
+
+            p.center {
+                text-align: center;
+                img {
+                    margin: 10px auto;
+                    background: #eee;
+                    padding: 5px;
+                    border: 1px solid #d4d4d4;
+                    .box-shadow(0 13px 5px -10px #AAA);
+                }
+            }
+        }
+    }
+}
+
